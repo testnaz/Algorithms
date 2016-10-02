@@ -11,7 +11,7 @@ public class UnionFindTest {
     private int N = 10;
     private List<String> data = new ArrayList<String>();
 
-    private QuickFind unionFind;
+    private IUnionFind unionFind;
 
     public void loadData(String fileName) throws IOException {
         //Load data
@@ -27,7 +27,7 @@ public class UnionFindTest {
     }
     @Before
     public void before() {
-        unionFind = new QuickFind(N);
+        unionFind = new QuickUnion(N);
     }
 
 
@@ -75,7 +75,7 @@ public class UnionFindTest {
         unionFind.union(2,3);
 
         unionFind.union(5,6);
-        unionFind.union(6,7);
+        unionFind.union(7,6);
         unionFind.union(7,8);
 
         unionFind.union(0,8);
