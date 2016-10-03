@@ -27,7 +27,7 @@ public class UnionFindTest {
     }
     @Before
     public void before() {
-        unionFind = new QuickUnion(N);
+        unionFind = new WeightedQuickUnion(N);
     }
 
 
