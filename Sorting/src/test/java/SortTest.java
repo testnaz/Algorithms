@@ -6,6 +6,20 @@ public class SortTest {
     private ISort sort;
 
     @Test
+    public void testSort() {
+        sort = new TestSort();
+        runTests(sort);
+    }
+
+    @Test
+    public void testQuickSort() {
+        sort = new QuickSort();
+        runTests(sort);
+        sort = new ThreeWayQuickSort();
+        runTests(sort);
+    }
+
+    @Test
     public void testMergeSort() {
         sort = new MergeSort();
         runTests(sort);

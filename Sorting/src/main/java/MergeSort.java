@@ -22,11 +22,14 @@ public class MergeSort extends AbstractSort {
             innerSort(input, temp, lo, mid);
             innerSort(input, temp, mid + 1, hi);
 
-            for (int k = 0; k < input.length; k++) {
-                temp[k] = input[k];
+            if (!(input[mid].compareTo(input[mid+1]) < 0)) {
+                for (int k = 0; k < input.length; k++) {
+                    temp[k] = input[k];
+                }
+
+                merge(input, temp, lo, mid, hi);
             }
 
-            merge(input, temp, lo, mid, hi);
         }
     }
 
