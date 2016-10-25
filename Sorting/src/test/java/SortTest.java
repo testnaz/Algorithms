@@ -12,6 +12,12 @@ public class SortTest {
     }
 
     @Test
+    public void testHeapSort() {
+        sort = new HeapSort();
+        runTests(sort);
+    }
+
+    @Test
     public void testQuickSort() {
         sort = new QuickSort();
         runTests(sort);

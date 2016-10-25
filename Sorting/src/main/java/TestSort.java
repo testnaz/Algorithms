@@ -1,43 +1,27 @@
 
-public class TestSort extends AbstractSort{
+public class TestSort extends AbstractSort {
 
-    private int CUTOFF = 3;
+    public void sort(Comparable[] inputArray) {
+        int size = inputArray.length;
 
-    public void sort(Comparable[] input) {
-        Comparable[] temp = new Comparable[input.length];
+        for (int k = size / 2; k >= 0; k--) {
+            heapify_sink(inputArray, k, size);
+        }
 
-
-        int n = input.length;
-
-        for (int len = 1; len < n; len *= 2) {
-            for (int lo = 0; lo < n - len; lo += len+len) {
-                int mid = lo + len - 1;
-                int hi = Math.min(lo + len*2 -1, n - 1);
-
-                for (int k = 0; k < input.length; k++) {
-                    temp[k] = input[k];
-                }
-                merge(input, temp, lo, mid, hi);
-            }
+        while (size > 0) {
+            exch(inputArray, 0, --size);
+            heapify_sink(inputArray, 0, size);
         }
     }
 
-    private void merge(Comparable[] input, Comparable[] temp, int lo, int mid, int hi) {
-        int i = lo;
-        int j = mid + 1;
-        for (int k = lo; k <= hi; k++) {
-            if (i > mid) {
-                input[k] = temp[j++];
-            }
-            else if (j > hi) {
-                input[k] = temp[i++];
-            }
-            else if (temp[i].compareTo(temp[j]) < 0) {
-                input[k] = temp[i++];
-            }
-            else {
-                input[k] = temp[j++];
-            }
+
+    private void heapify_sink(Comparable[] input, int elem_num, int size_limit) {
+        while (2 * elem_num + 1 < size_limit) {
+            int j = 2 * elem_num + 1;
+            if (j + 1 < size_limit && input[j].compareTo(input[j + 1]) < 0) j++;
+            if (!(input[elem_num].compareTo(input[j]) < 0)) break;
+            exch(input, elem_num, j);
+            elem_num = j;
         }
     }
 }
