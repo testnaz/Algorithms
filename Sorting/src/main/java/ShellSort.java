@@ -1,4 +1,9 @@
-
+/**
+ * Average: NlogN?
+ * Stable: no
+ * In place: yes
+ * Extra space: 1
+ */
 public class ShellSort extends AbstractSort {
     public void sort(Comparable[] inputArray) {
         int N = inputArray.length;

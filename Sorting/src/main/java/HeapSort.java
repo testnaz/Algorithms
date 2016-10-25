@@ -1,6 +1,11 @@
 /**
  * NlogN guaranteed time
- * N extra space
+ * Constant extra space
+ *
+ *
+ * Idea is to keep array as binary, heap-ordered tree
+ * Heap-ordered tree is binary tree that maintain condition: parent is > each children
+ * if array[k] is parent, then array[2*k] and array[2*k+1] are children
  */
 public class HeapSort extends AbstractSort {
     public void sort(Comparable[] inputArray) {

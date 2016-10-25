@@ -2,6 +2,12 @@
  * N^2/2 array accesses
  * N comparisons
  * Overall N^2 performance
+ *
+ *
+ * Average: N^2
+ * Stable: no
+ * In place: yes
+ * Extra space: 1
  */
 public class SelectionSort extends AbstractSort {
 

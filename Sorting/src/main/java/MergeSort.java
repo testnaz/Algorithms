@@ -7,6 +7,11 @@
  * Mergesort is an asymptotically optimal compare-based sorting algorithm.
  * That is, both the number of compares used by mergesort in the worst case
  * and the minimum number of compares that any compare-based sorting algorithm can guarantee are ~N lg N.
+ *
+ * Average: NlogN
+ * Stable: yes
+ * In place: no
+ * Extra space: N
  */
 public class MergeSort extends AbstractSort {
 

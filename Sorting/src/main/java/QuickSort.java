@@ -3,6 +3,11 @@
  * Worst case  - (N+1)*N/2 when each time one of subarrays is empty
  * Has small auxiliary stack - i.e. need less extra memory (unlike MergeSort)
  * Works best when partition splits the array in even 2 halves
+ *
+ * Average: NlogN
+ * Stable: no
+ * In place: yes
+ * Extra space: lgN
  */
 public class QuickSort extends AbstractSort {
     public void sort(Comparable[] inputArray) {

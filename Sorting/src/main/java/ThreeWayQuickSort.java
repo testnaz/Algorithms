@@ -4,6 +4,11 @@
  * 1) There are equal elements
  * 2) There are elements with equal keys (the more the better)
  * Djkstra in 60s, updated by Sedgewick in 90s
+ *
+ * Average: between N and lgN
+ * Stable: no
+ * In place: yes
+ * Extra space: lgN
  */
 public class ThreeWayQuickSort extends AbstractSort {
     public void sort(Comparable[] inputArray) {
